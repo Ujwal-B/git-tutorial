@@ -1,0 +1,13 @@
+https://missing.csail.mit.edu/2020/version-control/
+
+Advanced Git
+
+    git config: Git is highly customizable
+    git clone --depth=1: shallow clone, without entire version history
+    git add -p: interactive staging
+    git rebase -i: interactive rebasing
+    git blame: show who last edited which line
+    git stash: temporarily remove modifications to working directory
+    git bisect: binary search history (e.g. for regressions)
+    .gitignore: specify intentionally untracked files to ignore
+
