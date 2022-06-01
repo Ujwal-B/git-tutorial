@@ -7,8 +7,8 @@ def dog():
 def monkey():
     print("keekaw")
 
-def donkey():
-    print("*Insert Donkey Sounds*")
+#def donkey():
+#    print("*Insert Donkey Sounds*")
 
 
 def default():
@@ -26,8 +26,8 @@ def main():
     elif sys.argv[1] == "monkey":
         monkey()
 
-    elif sys.argv[1] == 'donkey':
-        donkey()
+ #   elif sys.argv[1] == 'donkey':
+  #      donkey()
     else:
         default()
 
