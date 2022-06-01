@@ -16,9 +16,39 @@ git log --all --graph --decorate - shows the version history into a graph, easie
 
 git checkout hash-of-commit - used to go to particular commit in the VCS
 
+git checkout file.txt - discards all changes done to the file and reverts it back to the state it was in the commit pointed by HEAD (last commit)
+
 git diff file.txt- shows the differences in file.txt compared to the previous command. It can also take in an argument, which is the hash of any commit throughout the version history, and compare changes with that commit.
 git diff 48889d6 file.txt - here the changes are compared with the commit containing the given hash.
 git diff 48889d6 HEAD file.txt - compares file differences between 2 commits
 git diff 48889d6 HEAD - compares everything between 2 commits
 
+git branch branchname - creates new branch
 
+git checkout branchname - change to the given branch
+
+git checkout -b branchname - create a new branch and change to it (combine the above 2 commands)
+
+git merge branchname - merges a branch with the main branch
+
+git mergetool - a tool which can be used to resolve merge conflicts. Popularly uses vimdiff as the editor.
+
+git merge --continue - after merge conflicts are resolved, continue the merge
+
+git merge --abort - stop the merge process
+
+git remote - lists all remote repositories that git is aware for this directory
+
+git remote add <remotename> <remotelocation> - add a remote repository
+ex: git remote add origin ../remote
+
+git push <remotename> <local branchname>:<remote branchname> - push changes from local repo to remote. Can push whichever branch is needed, and the branch receiving it at the remote can also be given a new name.
+ex: git push origin main:main
+
+git fetch <remotename> - fetches commits from remote repo
+
+git merge - combines commits which were fetched from the remote repo and merges them with the local repo
+
+git pull - same as git fetch; git merge
+
+git clone <remotelocation> <localrepo> - clone a remote repo to local machine
