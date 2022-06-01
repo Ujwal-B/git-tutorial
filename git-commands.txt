@@ -1,0 +1,24 @@
+git init - git initialize
+git help some-command - gives help about that command
+git status - provides current status of the current repository
+
+Staging area - local env where files are present. Git gives option to include whichever files we want to push from staging area
+
+git add file.txt - stage the file to be pushed to the VCS
+
+git commit -a - commit all changes (not add new ones)
+
+git commit :/ - add everything from the top (not clear enough)
+
+git log - visualise the version history
+
+git log --all --graph --decorate - shows the version history into a graph, easier to visualise
+
+git checkout hash-of-commit - used to go to particular commit in the VCS
+
+git diff file.txt- shows the differences in file.txt compared to the previous command. It can also take in an argument, which is the hash of any commit throughout the version history, and compare changes with that commit.
+git diff 48889d6 file.txt - here the changes are compared with the commit containing the given hash.
+git diff 48889d6 HEAD file.txt - compares file differences between 2 commits
+git diff 48889d6 HEAD - compares everything between 2 commits
+
+
