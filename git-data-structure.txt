@@ -1,0 +1,40 @@
+https://missing.csail.mit.edu/2020/version-control/ - video notes
+
+Data model in Git:
+
+trees - folders
+blobs - files
+
+trees can contain both other trees and blobs (recursive data structure)
+
+History recording in git: uses DAC - Directed Acyclic Graphs
+Each state points to it's previous state. Multiple states can point to the same parent state (branches). One state can point to multiple parent states as well.
+
+Git tries to manage merge conflicts on its own, but if there are severe conflicts which it cannot solve, it leaves them to the programmer to be done manually.
+
+Internal data structure:
+
+type blob = array<byte>
+type tree = map<string, tree|blob>
+type commit = struct {
+		parents: array<commit>
+		author: string
+		message: string
+		snapshot: tree
+		}
+
+How are they stored in the disk?
+type object = blob|tree|commit
+objects = map<string, object>
+
+each object is stored in an array of objects, which maps the object's hash to the actual object.
+
+id = sha1(object)
+objects[id] = object
+
+commit structures don't directly contain other objects, they instead contain pointers to these objects. Only author name and message and other fields unique to that particular commit are stored as values instead of references.
+
+references = map<string, string>
+references map human readable object names to their sha1 strings.
+
+DAC structure of git is immutable. Previous entries cannot be changed without changing everything after it.
